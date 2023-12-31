@@ -30,10 +30,6 @@ public class ClientService {
                 new RuntimeException("Client not found on id " + id));
     }
 
-    public Client findById(Long id){
-        return readById(id);
-    }
-
     public List<Client> readByName(String name){
         return clientRepository.findByName(name);
     }

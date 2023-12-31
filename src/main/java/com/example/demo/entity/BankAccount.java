@@ -1,20 +1,21 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 
 @Entity
-@Setter
-@Getter
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BankAccount {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @PrimaryKeyJoinColumn
     private Client client;
     @Column(nullable = false, columnDefinition="decimal", precision=15, scale=2)

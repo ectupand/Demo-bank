@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.api;
 
 import com.example.demo.entity.Client;
 import com.example.demo.model.ClientModel;
@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/bank-api")
 public class ClientController {
     private final ClientService clientService;
 

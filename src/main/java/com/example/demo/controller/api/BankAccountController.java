@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.api;
 
 import com.example.demo.entity.BankAccount;
 import com.example.demo.service.BankAccountService;
@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/bank-api")
 public class BankAccountController {
     private final BankAccountService bankAccountService;
 

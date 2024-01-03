@@ -13,6 +13,24 @@
             <a th:href="@{'/client/' + ${client.getId()}}" class="btn btn-secondary nav-link text-white" aria-current="page" th:text="${client.getName()}"></a>
         </li>
     </ul>
+
+    <form method="POST" th:action="@{/client/create-account}" th:object="${newAccount}">
+        <div class="col-12">
+            <label for="name" class="form-label">Account name: </label><br>
+            <input th:field="*{name}" class="form-control" type="text" id="name" name="name" required placeholder="wallet"><br>
+        </div>
+        <div class="col-12">
+            <label for="phone" class="form-label">Imaginary balance:</label><br>
+            <input th:field="*{balance}" class="form-control" type="text" id="phone" name="phone" placeholder="999"><br><br>
+        </div>
+        <div class="col-12">
+            <label for="clients-list">Whose account?</label>
+            <select id="clients-list" class="form-select">
+                <option th:field="*{client}" th:each="client : ${clients}" th:value="${client}" th:text="${client.getName()}"></option>
+            </select>
+        </div>
+        <button class="w-100 btn btn-secondary btn-lg" type="submit">Add account</button>
+    </form>
 </div>
 </body>
 </html>

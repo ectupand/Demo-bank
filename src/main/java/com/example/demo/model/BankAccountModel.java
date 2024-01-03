@@ -9,4 +9,5 @@ import java.math.BigDecimal;
 public class BankAccountModel {
     private Client client;
     private BigDecimal balance;
+    private String name;
 }

@@ -1,6 +1,7 @@
 package com.example.demo.controller.api;
 
 import com.example.demo.entity.BankAccount;
+import com.example.demo.model.BankAccountModel;
 import com.example.demo.service.BankAccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -32,7 +33,7 @@ public class BankAccountController {
     }
 
     @PostMapping("/account")
-    public ResponseEntity<BankAccount> create(@RequestBody BankAccount model) {
+    public ResponseEntity<BankAccount> create(@RequestBody BankAccountModel model) {
         return new ResponseEntity<>(bankAccountService.create(model), HttpStatus.OK);
     }
 

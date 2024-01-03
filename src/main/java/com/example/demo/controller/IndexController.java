@@ -23,8 +23,8 @@ public class IndexController {
         return "index";
     }
 
-    @PostMapping(value = "/processForm")
-    public String createClient(@ModelAttribute("newClient") ClientModel newClient, Model model){
+    @PostMapping(value = "/create-client")
+    public String createClient(@ModelAttribute("newClient") ClientModel newClient){
         clientService.create(newClient);
         return "redirect:/";
     }

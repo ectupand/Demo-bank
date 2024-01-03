@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.BankAccount;
+import com.example.demo.model.BankAccountModel;
 import com.example.demo.repository.BankAccountRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,10 +14,11 @@ import java.util.Optional;
 public class BankAccountService {
     private final BankAccountRepository bankAccountRepository;
 
-    public BankAccount create(BankAccount model){
+    public BankAccount create(BankAccountModel model){
         BankAccount bankAccount = BankAccount.builder()
                 .client(model.getClient())
                 .balance(model.getBalance())
+                .name(model.getName())
                 .build();
         return bankAccountRepository.save(bankAccount);
     }

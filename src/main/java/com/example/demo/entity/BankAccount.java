@@ -20,5 +20,7 @@ public class BankAccount {
     private Client client;
     @Column(nullable = false, columnDefinition="decimal", precision=15, scale=2)
     private BigDecimal balance;
+    @Column
+    private String name;
 
 }

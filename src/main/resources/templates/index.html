@@ -18,7 +18,7 @@
         <!--is filled with js-->
     </div>
 
-    <form method="POST" th:action="@{/processForm}" th:object="${newClient}">
+    <form method="POST" th:action="@{/create-client}" th:object="${newClient}">
         <div class="col-12">
             <label for="name" class="form-label">Name: </label><br>
             <input th:field="*{name}" class="form-control" type="text" id="name" name="name" required placeholder="me"><br>

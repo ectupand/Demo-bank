@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<header th:insert="~{fragments/header.html :: header}"></header>
+<body style="background: lightslategrey">
+    <div th:each="account : ${accounts}" class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+        <div class="list-group">
+
+            <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                    <div>
+                        <h6 class="mb-0" th:text="${account.getBalance()}"></h6>
+                        <p class="mb-0 opacity-75" th:text="${account.getClient().getName()}"></p>
+                    </div>
+                    <small class="opacity-50 text-nowrap" th:text="${account.getId()}"></small>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>

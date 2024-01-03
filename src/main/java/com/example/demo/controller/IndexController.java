@@ -25,9 +25,8 @@ public class IndexController {
 
     @PostMapping(value = "/processForm")
     public String createClient(@ModelAttribute("newClient") ClientModel newClient, Model model){
-        model.addAttribute("clients", clientService.readAll());
         clientService.create(newClient);
-        return "index";
+        return "redirect:/";
     }
 
 }

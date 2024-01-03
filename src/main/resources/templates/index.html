@@ -7,12 +7,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/index.js"></script>
 </head>
+<header th:insert="~{fragments/header.html :: header}"></header>
 <body style="background: lightslategrey">
+
 <div class=" container col-md-7 col-lg-8">
-    <select id="clients-list" class="form-select" size="6" aria-label="size 1 select example">
+    <select id="clients-list" class="form-select" size="6">
         <option th:each="client : ${clients}" th:value="${client.getName()}" th:text="${client.getName()}"></option>
     </select>
     <div id="account-info">
+        <!--is filled with js-->
     </div>
 
     <form method="POST" th:action="@{/processForm}" th:object="${newClient}">

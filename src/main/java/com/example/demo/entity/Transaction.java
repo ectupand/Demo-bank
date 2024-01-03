@@ -17,10 +17,10 @@ public class Transaction {
     private Long id;
     @ManyToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private BankAccount sender_account_id;
+    private BankAccount sender_account;
     @ManyToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private BankAccount receiver_account_id;
+    private BankAccount receiver_account;
     @Column(nullable = false, columnDefinition="decimal", precision=15, scale=2)
     private BigDecimal moneyAmount;
     @Column(nullable = false, columnDefinition = "TIMESTAMP")

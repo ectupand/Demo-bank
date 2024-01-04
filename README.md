@@ -1,4 +1,4 @@
-Технологии: Spring Boot, PostgreSQL  
+Технологии: Spring Boot, Thymeleaf, JQuery, PostgreSQL  
 Можно хранить и добавлять данные о клиентах и их счетах. 
   
 # Доступны три страницы:  

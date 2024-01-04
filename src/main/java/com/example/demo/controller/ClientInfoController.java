@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Client;
 import com.example.demo.service.BankAccountService;
-import com.example.demo.service.ClientService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +14,8 @@ public class ClientInfoController {
     private final BankAccountService bankAccountService;
 
     @GetMapping("/client/{id}")
-    public String getClientInfo(Model model, @PathVariable String id){
-        model.addAttribute("accounts", bankAccountService.readByClientId(Long.valueOf(id)));
+    public String getClientInfo(Model model, @PathVariable Long id){
+        model.addAttribute("accounts", bankAccountService.readByClientId(id));
         model.addAttribute("id", id);
         return "clientInfo";
     }

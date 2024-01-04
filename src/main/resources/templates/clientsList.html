@@ -25,8 +25,8 @@
         </div>
         <div class="col-12">
             <label for="clients-list">Whose account?</label>
-            <select id="clients-list" class="form-select">
-                <option th:field="*{client}" th:each="client : ${clients}" th:value="${client}" th:text="${client.getName()}"></option>
+            <select th:field="*{client}" id="clients-list" class="form-select">
+                <option th:each="_client : ${clients}" th:value="${_client.getId()}" th:text="${_client.getName()}"></option>
             </select>
         </div>
         <button class="w-100 btn btn-secondary btn-lg" type="submit">Add account</button>

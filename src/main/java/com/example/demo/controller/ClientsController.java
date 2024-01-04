@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.BankAccount;
-import com.example.demo.entity.Client;
 import com.example.demo.model.BankAccountModel;
 import com.example.demo.service.BankAccountService;
 import com.example.demo.service.ClientService;
